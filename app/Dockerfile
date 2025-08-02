@@ -20,6 +20,9 @@ COPY requirements.txt .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Pre-download EasyOCR models
+RUN python3 -c "import easyocr; easyocr.Reader(['en'], gpu=False)"
+
 # Copy app files
 COPY . .
 

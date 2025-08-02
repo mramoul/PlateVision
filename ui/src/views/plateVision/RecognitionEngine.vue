@@ -39,6 +39,9 @@ function updateCharts(classificationResult: any) {
 
 //Hooks
 const submit = async () => {
+    if (isAppLoading.value)
+        return
+
     isAppLoading.value = true
 
     try {
@@ -49,7 +52,8 @@ const submit = async () => {
 
         const formData = new FormData()
         formData.append('file', form.value.file)
-        const { data } = await axios.post('http://localhost:8000/api/v1/detect-plate', formData, {
+
+        const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/detect-plate`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -75,8 +79,8 @@ const submit = async () => {
 
             <div class="d-flex justify-center">
                 <motion.button v-bind="hoverScaleMotion">
-                    <v-btn class="mt-5 mt-lg-5" width="200px" height="50px" type="submit" color="primary"
-                        :loading="isAppLoading">
+                    <v-btn :disabled="isAppLoading" class="mt-5 mt-lg-5" width="200px" height="50px" type="submit"
+                        color="primary" :loading="isAppLoading">
                         Detecte Plate
                     </v-btn>
                 </motion.button>
