@@ -8,7 +8,6 @@ RUN npm run build
 # Production stage
 FROM nginx:alpine
 
-
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
 # Port will be injected by Cloud Run
