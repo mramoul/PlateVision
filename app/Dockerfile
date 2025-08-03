@@ -32,5 +32,7 @@ RUN python3 -c "from ultralytics import YOLO; YOLO('_infrastructure/ai_models/li
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
 
+EXPOSE 8080
+
 # Run FastAPI with uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
