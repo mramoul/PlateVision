@@ -25,7 +25,10 @@ watch(() => classificationResult.value, async (newVal) => {
     if (resultHistory.value.length === 0)
         resultHistory.value = classificationResult.value
     else
-        resultHistory.value = resultHistory.value.concat(classificationResult.value).reverse()
+        resultHistory.value = [
+            ...classificationResult.value,
+            ...resultHistory.value
+        ]
 
     await typingAnimation(containerRef, 'h2', 'keyframes')
 })
