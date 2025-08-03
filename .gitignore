@@ -1,1 +1,3 @@
 ui/src/.env
+.venv
+ui/.env
