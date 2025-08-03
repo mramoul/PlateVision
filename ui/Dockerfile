@@ -1,14 +1,29 @@
-FROM node:20-alpine as build-stage
+# ----------- Build Stage -----------
+FROM node:20-alpine AS build
 
 WORKDIR /app
 
-COPY . .
+COPY package*.json ./
 RUN npm install
+
+COPY . .
 RUN npm run build
 
-FROM nginx:alpine
+# ----------- Production Stage -----------
+FROM node:20-alpine
 
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+# Install lightweight static server
+RUN npm install -g serve
+
+WORKDIR /app
+
+# Copy built files from the previous stage
+COPY --from=build /app/dist .
+
+# Let Cloud Run or hosting platform inject the correct port
+ENV PORT=8080
 
 EXPOSE 8080
-CMD ["nginx", "-g", "daemon off;"]
+
+# Use dynamic port assignment
+CMD ["sh", "-c", "serve -s . -l $PORT"]
