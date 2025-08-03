@@ -53,8 +53,7 @@ const submit = async () => {
         const formData = new FormData()
         formData.append('file', form.value.file)
 
-        // ${import.meta.env.VITE_API_URL}
-        const { data } = await axios.post(`https://platevision-back-end.onrender.com/api/v1/detect-plate`, formData, {
+        const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/detect-plate`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
