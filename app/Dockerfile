@@ -26,6 +26,9 @@ RUN python3 -c "import easyocr; easyocr.Reader(['en'], gpu=False)"
 # Copy app files
 COPY . .
 
+# Optional: force YOLO model download
+RUN python3 -c "from ultralytics import YOLO; YOLO('_infrastructure/ai_models/license_plate_detector.pt')"
+
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
 
