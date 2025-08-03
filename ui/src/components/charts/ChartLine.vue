@@ -34,7 +34,7 @@ const chartOptions = computed(() => ({
     type: 'value',
     name: 'Prediction Confidence',
     nameTextStyle: {
-      padding: [0, 0, 20, 50]
+      padding: [0, 0, 20, 120]
     }
   },
   series: [
