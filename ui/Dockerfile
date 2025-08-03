@@ -1,14 +1,23 @@
-FROM node:20-alpine as build-stage
-
+# Build Stage
+FROM node:20-alpine AS build-stage
 WORKDIR /app
-
 COPY . .
 RUN npm install
 RUN npm run build
 
-FROM nginx:alpine
+# Production Stage
+FROM node:20-alpine
 
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+# Install `serve`
+RUN npm install -g serve
+
+WORKDIR /app
+COPY --from=build-stage /app/dist .
+
+# Cloud Run provides PORT env var (default 8080)
+ENV PORT=8080
 
 EXPOSE 8080
-CMD ["nginx", "-g", "daemon off;"]
+
+# Start the server
+CMD ["serve", "-s", ".", "-l", "8080"]
