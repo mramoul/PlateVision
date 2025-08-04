@@ -34,7 +34,7 @@ onMounted(async () => {
   <v-row>
 
     <!-- Intro -->
-    <v-col lg="5" md="12" cols="12">
+    <v-col lg="5" md="5" cols="12">
       <motion.div v-bind="slideLeftMotion">
         <v-card class="rounded-xl">
           <v-card-title>
@@ -92,19 +92,19 @@ onMounted(async () => {
     </v-col>
 
     <!-- Result Panel -->
-    <v-col lg="3" md="12" cols="12">
+    <v-col lg="3" md="3" cols="12">
       <motion.div v-bind="botEnterMotion">
         <recognition-result />
       </motion.div>
     </v-col>
 
     <!-- Chart Panel -->
-    <v-col lg="4" md="12" cols="12">
+    <v-col lg="4" md="4" cols="12">
       <motion.div v-bind="slideRightMotion">
         <chart-line />
       </motion.div>
       <motion.div v-bind="slideRightMotion">
-        <chart-pie class="mt-4 mt-md-10 mt-lg-16" />
+        <chart-pie class="mt-5" />
       </motion.div>
     </v-col>
 

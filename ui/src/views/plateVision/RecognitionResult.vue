@@ -74,7 +74,7 @@ watch(() => classificationResult.value, async (newVal) => {
 /* Large devices (desktops, ≥1024px) */
 @media (min-width: 1024px) {
     .container {
-        height: 90vh;
+        height: calc(100vh - 115px);
     }
 }
 </style>

@@ -17,7 +17,7 @@ provide(appInjectionKey, appContext)
 <template>
   <v-app>
     <v-main>
-      <v-container max-width="95%" class="mt-5 mt-lg-10">
+      <v-container max-width="95%" class=" mt-md-10 mt-lg-10">
         <router-view />
       </v-container>
     </v-main>
