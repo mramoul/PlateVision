@@ -38,7 +38,7 @@ const chartOptions = computed(() => ({
   series: [
     {
       type: 'pie',
-      radius: '90%',
+      radius: '80%',
       data: chartPieLabels.value.map((label, i) => ({
         name: label,
         value: chartPieData.value[i]
@@ -73,6 +73,6 @@ const chartOptions = computed(() => ({
 <style scoped>
 .pie-container {
   width: 100%;
-  height: 400px;
+  height: 40vh;
 }
 </style>

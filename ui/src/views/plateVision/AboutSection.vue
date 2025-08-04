@@ -1,6 +1,6 @@
 <template>
     <v-card class="rounded-xl" elevation="0">
-        <v-card-title>This app was built using the following libraries:</v-card-title>
+        <v-card-title>This app was built using:</v-card-title>
         <v-card-text>
             <ul>
                 <li><strong>Vue 3</strong> – Frontend framework</li>

@@ -19,9 +19,10 @@ const apiUrl = import.meta.env.VITE_API_URL;
 
 const { mdAndDown } = useDisplay()
 const fileInputDensity = computed(() => (mdAndDown.value ? 'compact' : 'default'))
+const fileInputHeight = computed(() => (mdAndDown.value ? '50px' : '300px'))
 
 const form = ref({
-    file: null as any | null,
+    file: undefined as File | undefined,
 })
 
 // Funcs
@@ -40,9 +41,6 @@ function updateCharts(classificationResult: any) {
 
 //Hooks
 const submit = async () => {
-    if (isAppLoading.value)
-        return
-
     isAppLoading.value = true
 
     try {
@@ -74,20 +72,19 @@ const submit = async () => {
 
 <template>
     <v-card elevation="0" class="pa-6 rounded-xl">
-        <v-form @submit.prevent="submit">
-            <motion.div v-bind="botEnterMotion">
-                <v-file-upload title="Upload Photo" :density="fileInputDensity" clearable v-model="form.file" />
-            </motion.div>
+        <motion.div v-bind="botEnterMotion">
+            <v-file-upload :height="fileInputHeight" title="Upload Photo" :density="fileInputDensity" clearable
+                v-model="form.file" />
+        </motion.div>
 
-            <div class="d-flex justify-center">
-                <motion.button v-bind="hoverScaleMotion">
-                    <v-btn :disabled="isAppLoading" class="mt-5 mt-lg-5" width="200px" height="50px" type="submit"
-                        color="primary" :loading="isAppLoading">
-                        Detecte Plate
-                    </v-btn>
-                </motion.button>
-            </div>
-        </v-form>
+        <div class="d-flex justify-center">
+            <motion.button v-bind="hoverScaleMotion">
+                <v-btn :disabled="isAppLoading" class="mt-5 mt-lg-5" width="200px" height="50px" type="submit"
+                    color="primary" :loading="isAppLoading" @click="submit()">
+                    Detecte Plate
+                </v-btn>
+            </motion.button>
+        </div>
     </v-card>
 </template>
 
