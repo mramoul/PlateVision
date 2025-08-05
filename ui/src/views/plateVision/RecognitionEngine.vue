@@ -6,10 +6,10 @@ import { hoverScaleMotion, botEnterMotion } from '../../animations/motionPresets
 import { useDisplay } from 'vuetify'
 import useInjection from '../../helpers/injector'
 import { appInjectionKey, type AppInjectionContext } from '../../app.injection'
-import { platVisionInjectionKey, type PlateVisionInjectionContext } from './plateVision.injection'
+import { plateVisionInjectionKey, type PlateVisionInjectionContext } from './plateVision.injection'
 
 // Setup
-const { classificationResult, addChartLinePoint, addChartPiePortion } = useInjection<PlateVisionInjectionContext>(platVisionInjectionKey)
+const { classificationResult, addChartLinePoint, addChartPiePortion } = useInjection<PlateVisionInjectionContext>(plateVisionInjectionKey)
 const { isAppLoading } = useInjection<AppInjectionContext>(appInjectionKey)
 
 //Variables

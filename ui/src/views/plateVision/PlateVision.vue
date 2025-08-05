@@ -4,15 +4,15 @@ import { slideLeftMotion, slideRightMotion, expandMotion, botEnterMotion } from 
 import ChartLine from '../../components/charts/ChartLine.vue'
 import ChartPie from '../../components/charts/ChartPie.vue'
 import { motion, AnimatePresence } from 'motion-v'
-import { platVisionInjectionKey, usePlateVisionProvider } from './plateVision.injection'
+import { plateVisionInjectionKey, usePlateVisionProvider } from './plateVision.injection'
 import RecognitionEngine from './RecognitionEngine.vue'
 import RecognitionResult from './RecognitionResult.vue'
 import { typingAnimation } from '../../animations/textPresets'
 import AboutSection from './AboutSection.vue'
 
 // Setup
-const chartContext = usePlateVisionProvider()
-provide(platVisionInjectionKey, chartContext)
+const plateVisionContext = usePlateVisionProvider()
+provide(plateVisionInjectionKey, plateVisionContext)
 
 // Variables
 const isTryOutTrigged = ref(false)

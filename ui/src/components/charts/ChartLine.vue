@@ -6,12 +6,12 @@ import { CanvasRenderer } from 'echarts/renderers'
 import { LineChart } from 'echarts/charts'
 import { GridComponent, TooltipComponent } from 'echarts/components'
 import useInjection from '../../helpers/injector'
-import { type PlateVisionInjectionContext, platVisionInjectionKey } from '../../views/plateVision/plateVision.injection'
+import { type PlateVisionInjectionContext, plateVisionInjectionKey } from '../../views/plateVision/plateVision.injection'
 
 // Setup
 use([CanvasRenderer, LineChart, GridComponent, TooltipComponent])
 
-const { chartLabels, chartData } = useInjection<PlateVisionInjectionContext>(platVisionInjectionKey)
+const { chartLabels, chartData } = useInjection<PlateVisionInjectionContext>(plateVisionInjectionKey)
 
 // Variables
 
