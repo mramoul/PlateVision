@@ -13,7 +13,7 @@ const { classificationResult, addChartLinePoint, addChartPiePortion } = useInjec
 const { isAppLoading } = useInjection<AppInjectionContext>(appInjectionKey)
 
 //Variables
-const noneResut = 'Unable to read'
+const noneResut = 'Unreadable'
 const positiveResut = 'Readable'
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -52,7 +52,6 @@ const submit = async () => {
         const formData = new FormData()
         formData.append('file', form.value.file)
 
-        console.log(apiUrl)
         const { data } = await axios.post(`${apiUrl}/api/v1/detect-plate`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
