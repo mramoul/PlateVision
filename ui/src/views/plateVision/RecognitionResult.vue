@@ -14,6 +14,8 @@ const containerRef = ref<HTMLDivElement | null>(null)
 
 const resultHistory = ref<any[]>([])
 
+const noneResut = 'Unreadable'
+
 // Funcs
 
 // Hooks
@@ -41,7 +43,7 @@ watch(() => classificationResult.value, async (newVal) => {
                 <v-img :src="`data:image/jpeg;base64,${img.image}`" />
                 <h2 v-if="img.text">{{ img.text ? img.text : "Unable to read" }}</h2>
                 <v-alert height="50px" v-else type="warning">
-                    <h2 class="mt-n2">{{ "Unable to read" }}</h2>
+                    <h2 class="mt-n2">{{ noneResut }}</h2>
                 </v-alert>
             </div>
         </div>
