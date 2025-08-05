@@ -39,7 +39,6 @@ function updateCharts(classificationResult: any) {
     })
 }
 
-//Hooks
 const submit = async () => {
     isAppLoading.value = true
 
@@ -67,6 +66,9 @@ const submit = async () => {
         isAppLoading.value = false
     }
 }
+
+// Hooks
+
 </script>
 
 <template>
