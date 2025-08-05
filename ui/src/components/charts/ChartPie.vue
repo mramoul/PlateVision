@@ -74,5 +74,4 @@ const chartOptions = computed(() => ({
 .pie-container {
   width: 100%;
   height: calc(40vh - 115px);
-}
 </style>
