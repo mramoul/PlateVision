@@ -11,7 +11,7 @@ export interface PlateVisionInjectionContext {
     addChartPiePortion: (label: string) => void
 }
 
-export const platVisionInjectionKey: InjectionKey<PlateVisionInjectionContext> = Symbol('PlateVisionInjectionContext')
+export const plateVisionInjectionKey: InjectionKey<PlateVisionInjectionContext> = Symbol('PlateVisionInjectionContext')
 
 export function usePlateVisionProvider(): PlateVisionInjectionContext {
     const chartLabels = ref<string[]>([])

@@ -6,12 +6,12 @@ import { CanvasRenderer } from 'echarts/renderers'
 import { PieChart } from 'echarts/charts'
 import { TooltipComponent, LegendComponent } from 'echarts/components'
 import useInjection from '../../helpers/injector'
-import { type PlateVisionInjectionContext, platVisionInjectionKey } from '../../views/plateVision/plateVision.injection'
+import { type PlateVisionInjectionContext, plateVisionInjectionKey } from '../../views/plateVision/plateVision.injection'
 
 // Setup
 use([CanvasRenderer, PieChart, TooltipComponent, LegendComponent])
 
-const { chartPieLabels, chartPieData } = useInjection<PlateVisionInjectionContext>(platVisionInjectionKey)
+const { chartPieLabels, chartPieData } = useInjection<PlateVisionInjectionContext>(plateVisionInjectionKey)
 
 // Variables
 

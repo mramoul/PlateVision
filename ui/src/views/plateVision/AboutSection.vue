@@ -12,7 +12,7 @@
                 <li><strong>Docker</strong> – App containerization and deployment</li>
                 <li><strong>YOLOv8</strong> – Object detection model for image inference</li>
                 <li><strong>EasyOCR</strong> – Optical Character Recognition</li>
-                <li><strong>ChatGPT</strong> – Of course ...</li>
+                <li><strong>ChatGPT</strong> – Docker and containerization</li>
             </ul>
             <br />
             <p>By Mohamed Ramoul</p>

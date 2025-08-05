@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { watch, ref, nextTick } from 'vue'
-import { platVisionInjectionKey, type PlateVisionInjectionContext } from './plateVision.injection'
+import { plateVisionInjectionKey, type PlateVisionInjectionContext } from './plateVision.injection'
 import useInjection from '../../helpers/injector'
 import { typingAnimation } from '../../animations/textPresets'
 import { type AppInjectionContext, appInjectionKey } from '../../app.injection'
 
 // Setup
-const { classificationResult } = useInjection<PlateVisionInjectionContext>(platVisionInjectionKey)
+const { classificationResult } = useInjection<PlateVisionInjectionContext>(plateVisionInjectionKey)
 const { isAppLoading } = useInjection<AppInjectionContext>(appInjectionKey)
 
 // Variables
